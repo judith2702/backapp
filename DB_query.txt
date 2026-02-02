@@ -1,0 +1,585 @@
+INSERT INTO api_broker (id, name, image_url, phone, email) VALUES
+(1, 'Anna Mäklare', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80', '070-123 45 67', 'anna@maklare.se'),
+(2, 'Johan Säljare', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80', '070-987 65 43', 'johan@maklare.se'),
+(3, 'Erik Svensson', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80', '070-555 55 55', 'erik@maklare.se'),
+(4, 'Sofia Larsson', 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80', '070-111 22 33', 'sofia.larsson@maklare.se'),
+(5, 'Lars Berg', 'https://images.unsplash.com/photo-1560250097-0b935839f1e1?auto=format&fit=crop&q=80', '070-222 33 44', 'lars.berg@maklare.se'),
+(6, 'Karin Svensson', 'https://images.unsplash.com/photo-1598550832205-d07f9c8d8d1e?auto=format&fit=crop&q=80', '070-333 44 55', 'karin.svensson@maklare.se'),
+(7, 'Magnus Lind', 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80', '070-444 55 66', 'magnus.lind@maklare.se'),
+(8, 'Elin Ek', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80', '070-555 66 77', 'elin.ek@maklare.se'),
+(9, 'Per Andersson', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80', '070-666 77 88', 'per.andersson@maklare.se'),
+(10, 'Julia Nilsson', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80', '070-777 88 99', 'julia.nilsson@maklare.se');
+
+INSERT INTO api_property (
+    id,
+    type,
+    address,
+    area,
+    municipality,
+    price,
+    sqm,
+    rooms,
+    fee,
+    published,
+    is_bidding,
+    description,
+    renovation_level,
+    created_at,
+    broker_id
+) VALUES
+(
+    1,
+    'Villa',
+    'Sjösala 4',
+    'Djursholm',
+    'Danderyd',
+    '24 900 000 kr',
+    240,
+    8,
+    '6 400 kr/year',
+    'Yesterday',
+    1,
+    'Welcome to this fantastic villa in the heart of Djursholm. Here you are offered a residence beyond the ordinary.',
+    'premium',
+    '2025-01-06 09:00:00',
+    1
+),
+(
+    2,
+    'Apartment',
+    'Karlavägen 76',
+    'Östermalm',
+    'Stockholm',
+    '12 500 000 kr',
+    85,
+    3,
+    '3 200 kr/month',
+    '3 days ago',
+    0,
+    'Turn-of-the-century dream at the best address!',
+    'plus',
+    '2025-01-05 10:00:00',
+    2
+),
+(
+    3,
+    'Terraced house',
+    'Sommarvägen 12',
+    'Enskede',
+    'Stockholm',
+    '8 495 000 kr',
+    115,
+    5,
+    '1 500 kr/year',
+    'Today',
+    1,
+    'Family-friendly townhouse with end position.',
+    'basic',
+    '2025-01-07 11:00:00',
+    3
+),
+(
+    4,
+    'Apartment',
+    'Norr Mälarstrand 22',
+    'Kungsholmen',
+    'Stockholm',
+    '9 500 000 kr',
+    92,
+    3,
+    '4 500 kr/month',
+    'Today',
+    0,
+    'Bright and spacious apartment with views over Riddarfjärden.',
+    'none',
+    '2025-01-07 12:00:00',
+    4
+),
+(
+    5,
+    'Apartment',
+    'Götgatan 45',
+    'Södermalm',
+    'Stockholm',
+    '6 200 000 kr',
+    65,
+    2,
+    '3 100 kr/month',
+    '2 days ago',
+    1,
+    'Charming turn-of-the-century apartment in the heart of Södermalm.',
+    'basic',
+    '2025-01-05 13:00:00',
+    5
+),
+(
+    6,
+    'Apartment',
+    'Linnégatan 15',
+    'Linnéstaden',
+    'Göteborg',
+    '4 200 000 kr',
+    68,
+    2,
+    '3 500 kr/month',
+    'Today',
+    1,
+    'Beautiful turn-of-the-century two-room apartment in the heart of Linné.',
+    'plus',
+    '2025-01-07 14:00:00',
+    6
+),
+(
+    7,
+    'Villa',
+    'Strandvägen 50',
+    'Limhamn',
+    'Malmö',
+    '11 500 000 kr',
+    180,
+    6,
+    '5 200 kr/year',
+    'Yesterday',
+    0,
+    'Exclusive villa with ocean views and pool.',
+    'premium',
+    '2025-01-06 15:00:00',
+    7
+),
+(
+    8,
+    'Terraced house',
+    'Börjegatan 22',
+    'Luthagen',
+    'Uppsala',
+    '5 900 000 kr',
+    110,
+    4,
+    '1 800 kr/year',
+    '2 days ago',
+    1,
+    'Cozy townhouse close to city and nature.',
+    'basic',
+    '2025-01-05 16:00:00',
+    8
+),
+(
+    9,
+    'Apartment',
+    'Stora Gatan 10',
+    'Centrum',
+    'Västerås',
+    '2 800 000 kr',
+    75,
+    3,
+    '4 100 kr/month',
+    '3 days ago',
+    0,
+    'Modern three-room apartment with large south-facing balcony.',
+    'basic',
+    '2025-01-04 17:00:00',
+    9
+),
+(
+    10,
+    'Apartment',
+    'Sölvegatan 8',
+    'Tuna',
+    'Lund',
+    '3 100 000 kr',
+    55,
+    2,
+    '2 900 kr/month',
+    'Today',
+    1,
+    'Perfect student accommodation or first home near the university.',
+    'none',
+    '2025-01-07 18:00:00',
+    10
+),
+(
+    11,
+    'Villa',
+    'Parkvägen 15',
+    'Täby',
+    'Stockholm',
+    '8 500 000 kr',
+    165,
+    6,
+    '4 500 kr/year',
+    'Today',
+    1,
+    'Family villa with a large garden close to schools and transport links.',
+    'basic',
+    '2025-01-06 09:00:00',
+    1
+),
+(
+    12,
+    'Apartment',
+    'Mariagatan 8',
+    'Majorna',
+    'Göteborg',
+    '3 200 000 kr',
+    58,
+    2,
+    '3 800 kr/month',
+    'Yesterday',
+    0,
+    'Charming two-room apartment with preserved original details.',
+    'basic',
+    '2025-01-06 10:30:00',
+    2
+),
+(
+    13,
+    'Villa',
+    'Sundspromenaden 5',
+    'Västra Hamnen',
+    'Malmö',
+    '7 900 000 kr',
+    145,
+    5,
+    '5 100 kr/year',
+    '2 days ago',
+    1,
+    'Modern home by the sea with fantastic views.',
+    'premium',
+    '2025-01-05 14:00:00',
+    3
+),
+(
+    14,
+    'Villa',
+    'Solbacken 3',
+    'Ekerö',
+    'Stockholm',
+    '6 250 000 kr',
+    140,
+    5,
+    '3 500 kr/year',
+    '2 days ago',
+    0,
+    'Bright and modern villa with a large private plot.',
+    'basic',
+    '2025-01-04 11:00:00',
+    4
+),
+(
+    15,
+    'Apartment',
+    'Hornsgatan 90',
+    'Södermalm',
+    'Stockholm',
+    '5 500 000 kr',
+    62,
+    2,
+    '2 900 kr/month',
+    'Today',
+    1,
+    'Trendy apartment with a balcony overlooking the courtyard.',
+    'basic',
+    '2025-01-07 08:00:00',
+    5
+),
+(
+    16,
+    'Villa',
+    'Herserudsvägen 12',
+    'Lidingö',
+    'Stockholm',
+    '15 000 000 kr',
+    220,
+    8,
+    '7 000 kr/year',
+    'Yesterday',
+    0,
+    'Architect-designed villa with pool and lake view.',
+    'premium',
+    '2025-01-06 15:30:00',
+    6
+),
+(
+    17,
+    'Apartment',
+    'Drottninggatan 14',
+    'Centrum',
+    'Uppsala',
+    '2 900 000 kr',
+    55,
+    2,
+    '3 400 kr/month',
+    '4 days ago',
+    1,
+    'Central two-room apartment close to the university.',
+    'basic',
+    '2025-01-03 12:00:00',
+    7
+),
+(
+    18,
+    'Villa',
+    'Äppelviksvägen 34',
+    'Bromma',
+    'Stockholm',
+    '11 200 000 kr',
+    180,
+    7,
+    '5 500 kr/year',
+    'Today',
+    1,
+    'Classic Bromma villa from the 1920s with a large plot.',
+    'basic',
+    '2025-01-07 10:15:00',
+    8
+),
+(
+    19,
+    'Apartment',
+    'Dalagatan 24',
+    'Vasastan',
+    'Stockholm',
+    '8 100 000 kr',
+    95,
+    3,
+    '4 600 kr/month',
+    'Yesterday',
+    0,
+    'Generous representative apartment with stucco ceilings and a tiled stove.',
+    'plus',
+    '2025-01-06 13:45:00',
+    9
+),
+(
+    20,
+    'Villa',
+    'Strandgatan 4',
+    'Visby',
+    'Gotland',
+    '6 500 000 kr',
+    130,
+    5,
+    '4 200 kr/year',
+    '5 days ago',
+    1,
+    'Residence near the city wall with medieval origins.',
+    'basic',
+    '2025-01-02 09:30:00',
+    10
+);
+
+INSERT INTO api_propertyimage (id, image_url, property_id) VALUES
+-- Property 1
+(1, 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80', 1),
+(2, 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80', 1),
+(3, 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80', 1),
+(4, 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80', 1),
+
+-- Property 2
+(5, 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80', 2),
+(6, 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80', 2),
+
+-- Property 3
+(7, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80', 3),
+(8, 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&q=80', 3),
+
+-- Property 4
+(9, 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80', 4),
+(10, 'https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&fit=crop&q=80', 4),
+
+-- Property 5
+(11, 'https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80', 5),
+(12, 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80', 5),
+
+-- Property 6
+(13, 'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&q=80', 6),
+(14, 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80', 6),
+
+-- Property 7
+(15, 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80', 7),
+(16, 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80', 7),
+
+-- Property 8
+(17, 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80', 8),
+(18, 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&q=80', 8),
+
+-- Property 9
+(19, 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80', 9),
+(20, 'https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&q=80', 9),
+
+-- Property 10
+(21, 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&q=80', 10),
+(22, 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80', 10),
+
+-- Property 11
+(23, 'https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&q=80', 11),
+(24, 'https://images.unsplash.com/photo-1600210491414-e2c4b0b6e7c0?auto=format&fit=crop&q=80', 11),
+
+-- Property 12
+(25, 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80', 12),
+(26, 'https://images.unsplash.com/photo-1600210491484-e5c0b6e7c0d0?auto=format&fit=crop&q=80', 12),
+
+-- Property 13
+(27, 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80', 13),
+(28, 'https://images.unsplash.com/photo-1600210491540-e5c0b6e7c0e0?auto=format&fit=crop&q=80', 13),
+
+-- Property 14
+(29, 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&q=80', 14),
+(30, 'https://images.unsplash.com/photo-1600210491596-e5c0b6e7c0f0?auto=format&fit=crop&q=80', 14),
+
+-- Property 15
+(31, 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80', 15),
+(32, 'https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&q=80', 15),
+
+-- Property 16
+(33, 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&q=80', 16),
+(34, 'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&q=80', 16),
+
+-- Property 17
+(35, 'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&q=80', 17),
+(36, 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80', 17),
+
+-- Property 18
+(37, 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80', 18),
+(38, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80', 18),
+
+-- Property 19
+(39, 'https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?auto=format&fit=crop&q=80', 19),
+(40, 'https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&q=80', 19),
+
+-- Property 20
+(41, 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&q=80', 20),
+(42, 'https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&q=80', 20);
+
+INSERT INTO api_propertyfact (id, label, value, property_id) VALUES
+-- Property 1
+(1, 'Living area', '240 m²', 1),
+(2, 'Secondary area', '80 m²', 1),
+(3, 'Plot area', '1 200 m²', 1),
+(4, 'Rooms', '8 rooms', 1),
+(5, 'Built', '1925', 1),
+(6, 'Operating cost', '45 000 kr/year', 1),
+
+-- Property 2
+(7, 'Living area', '85 m²', 2),
+(8, 'Floor', '3 of 5', 2),
+(9, 'Fee', '3 200 kr/month', 2),
+(10, 'Rooms', '3 rooms', 2),
+(11, 'Built', '1895', 2),
+(12, 'Association', 'Brf Karlavägen', 2),
+
+-- Property 3
+(13, 'Living area', '115,5 m²', 3),
+(14, 'Plot area', '350 m²', 3),
+(15, 'Rooms', '5 rooms', 3),
+(16, 'Built', '1975', 3),
+(17, 'Heating', 'District heating', 3),
+
+-- Property 4
+(18, 'Living area', '92 m²', 4),
+(19, 'Floor', '4 of 6', 4),
+(20, 'Fee', '4 500 kr/month', 4),
+(21, 'Rooms', '3 rooms', 4),
+(22, 'Balcony', 'Yes', 4),
+
+-- Property 5
+(23, 'Living area', '65 m²', 5),
+(24, 'Floor', '2 of 4', 5),
+(25, 'Fee', '3 100 kr/month', 5),
+(26, 'Rooms', '2 rooms', 5),
+(27, 'Elevator', 'Yes', 5),
+
+-- Property 6
+(28, 'Living area', '68 m²', 6),
+(29, 'Floor', '3 of 5', 6),
+(30, 'Fee', '3 500 kr/month', 6),
+(31, 'Rooms', '2 rooms', 6),
+(32, 'Built', '1905', 6),
+
+-- Property 7
+(33, 'Living area', '180 m²', 7),
+(34, 'Plot area', '800 m²', 7),
+(35, 'Rooms', '6 rooms', 7),
+(36, 'Pool', 'Yes', 7),
+(37, 'Built', '2015', 7),
+
+-- Property 8
+(38, 'Living area', '110 m²', 8),
+(39, 'Plot area', '250 m²', 8),
+(40, 'Fee', '1 800 kr/year', 8),
+(41, 'Rooms', '4 rooms', 8),
+(42, 'Patio', 'Yes', 8),
+
+-- Property 9
+(43, 'Living area', '75 m²', 9),
+(44, 'Floor', '5 of 8', 9),
+(45, 'Fee', '4 100 kr/month', 9),
+(46, 'Balcony', 'South facing', 9),
+(47, 'Elevator', 'Yes', 9),
+
+-- Property 10
+(48, 'Living area', '55 m²', 10),
+(49, 'Floor', '2 of 3', 10),
+(50, 'Fee', '2 900 kr/month', 10),
+(51, 'Rooms', '2 rooms', 10),
+(52, 'Built', '1965', 10),
+
+-- Property 11
+(53, 'Living area', '165 m²', 11),
+(54, 'Plot area', '950 m²', 11),
+(55, 'Rooms', '6 rooms', 11),
+(56, 'Built', '2010', 11),
+
+-- Property 12
+(57, 'Living area', '58 m²', 12),
+(58, 'Floor', '1 of 3', 12),
+(59, 'Fee', '3 800 kr/month', 12),
+(60, 'Rooms', '2 rooms', 12),
+
+-- Property 13
+(61, 'Living area', '145 m²', 13),
+(62, 'Plot area', '450 m²', 13),
+(63, 'Rooms', '5 rooms', 13),
+(64, 'Year', '2018', 13),
+
+-- Property 14
+(65, 'Living area', '140 m²', 14),
+(66, 'Plot area', '850 m²', 14),
+(67, 'Rooms', '5 rooms', 14),
+(68, 'Built', '2005', 14),
+
+-- Property 15
+(69, 'Living area', '62 m²', 15),
+(70, 'Floor', '5 of 5', 15),
+(71, 'Fee', '2 900 kr/month', 15),
+(72, 'Balcony', 'Yes', 15),
+
+-- Property 16
+(73, 'Living area', '220 m²', 16),
+(74, 'Plot area', '1 500 m²', 16),
+(75, 'Pool', 'Yes', 16),
+(76, 'Rooms', '8 rooms', 16),
+
+-- Property 17
+(77, 'Living area', '55 m²', 17),
+(78, 'Floor', '2 of 4', 17),
+(79, 'Fee', '3 400 kr/month', 17),
+(80, 'Elevator', 'Yes', 17),
+
+-- Property 18
+(81, 'Living area', '180 m²', 18),
+(82, 'Plot area', '800 m²', 18),
+(83, 'Rooms', '7 rooms', 18),
+(84, 'Fireplace', 'Yes', 18),
+
+-- Property 19
+(85, 'Living area', '95 m²', 19),
+(86, 'Floor', '3 of 6', 19),
+(87, 'Fee', '4 600 kr/month', 19),
+(88, 'Balcony', 'Yes', 19),
+
+-- Property 20
+(89, 'Living area', '130 m²', 20),
+(90, 'Plot area', '600 m²', 20),
+(91, 'Rooms', '5 rooms', 20),
+(92, 'Heritage', 'Yes', 20);
