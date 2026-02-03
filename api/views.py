@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view
 from django.db.models import Q
 from rest_framework.response import Response
+from rest_framework.permissions import AllowAny 
 from rest_framework import viewsets, status, permissions, authentication
 from rest_framework.views import APIView
 from django.contrib.auth import authenticate, login, logout
@@ -34,10 +35,12 @@ from .serializers import (
 class BrokerViewSet(viewsets.ModelViewSet):
     queryset = Broker.objects.all()
     serializer_class = BrokerSerializer
+    permission_classes = [AllowAny]
 
 class PropertyViewSet(viewsets.ModelViewSet):
     queryset = Property.objects.select_related('broker').prefetch_related('images', 'facts').all()
     serializer_class = PropertySerializer
+    permission_classes = [AllowAny]
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -117,10 +120,12 @@ class PropertyViewSet(viewsets.ModelViewSet):
 class PropertyImageViewSet(viewsets.ModelViewSet):
     queryset = PropertyImage.objects.all()
     serializer_class = PropertyImageSerializer
+    permission_classes = [AllowAny]
 
 class PropertyFactViewSet(viewsets.ModelViewSet):
     queryset = PropertyFact.objects.all()
     serializer_class = PropertyFactSerializer
+    permission_classes = [AllowAny]
 
 
 # Auth Views
@@ -295,6 +300,7 @@ class PasswordResetConfirmView(APIView):
 
 class ContactMessageView(APIView):
     permission_classes = [permissions.AllowAny]
+    
     
     def post(self, request):
         serializer = ContactMessageSerializer(data=request.data)
