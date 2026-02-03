@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Daarla-Invest/Daarla-BE/issues"
   },
-  "homepage": "https://github.com/Daarla-Invest/Daarla-BE#readme"
+  "homepage": "https://github.com/Daarla-Invest/Daarla-BE#readme",
+  "dependencies": {
+    "gunicorn": "^0.0.1-security",
+    "whitenoise": "^0.0.1"
+  }
 }
