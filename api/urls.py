@@ -24,14 +24,14 @@ router.register(r'property-facts', PropertyFactViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     # Auth endpoints
-    path('auth/register/', RegisterView.as_view(), name='register'),
-    path('auth/login/', LoginView.as_view(), name='login'),
-    path('auth/logout/', LogoutView.as_view(), name='logout'),
-    path('auth/guest/', GuestUserView.as_view(), name='guest'),
-    path('auth/me/', CurrentUserView.as_view(), name='current_user'),
+    path('api/auth/register/', RegisterView.as_view(), name='register'),
+    path('api/auth/login/', LoginView.as_view(), name='login'),
+    path('api/auth/logout/', LogoutView.as_view(), name='logout'),
+    path('api/auth/guest/', GuestUserView.as_view(), name='guest'),
+    path('api/auth/me/', CurrentUserView.as_view(), name='current_user'),
 
     # Custom Password Reset URLs
-    path('auth/password-reset/request/', PasswordResetRequestView.as_view(), name='password_reset_request'),
-    path('auth/password-reset/confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    path('contact/', ContactMessageView.as_view(), name='contact_message'),
+    path('api/auth/password-reset/request/', PasswordResetRequestView.as_view(), name='password_reset_request'),
+    path('api/auth/password-reset/confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('api/contact/', ContactMessageView.as_view(), name='contact_message'),
 ]
